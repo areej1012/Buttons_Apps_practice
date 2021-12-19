@@ -14,11 +14,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.button.setOnClickListener {
-            Toast.makeText(this, "setOnClickListener",Toast.LENGTH_SHORT).show()
+         binding.tvResult.text = binding.etResult.text.toString()
         }
     }
 
-    fun displayXml(view: View) {
-        Toast.makeText(this, "onClick",Toast.LENGTH_SHORT).show()
-    }
+
 }
