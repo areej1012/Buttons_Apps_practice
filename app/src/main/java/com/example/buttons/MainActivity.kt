@@ -1,5 +1,6 @@
 package com.example.buttons
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -14,8 +15,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.button.setOnClickListener {
-         binding.tvResult.text = binding.etResult.text.toString()
+        Toast.makeText(this , binding.etResult.text.toString(),Toast.LENGTH_LONG).show()
         }
+        binding.button2.setOnClickListener {
+            binding.tvResult.text = binding.etResult2.text.toString()
+        }
+    }
+
+    fun newActivity(view: View) {
+        val intent = Intent(this, MainActivity2 :: class.java)
+        intent.putExtra("result",binding.etResult3.text.toString())
+        startActivity(intent)
     }
 
 
